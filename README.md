@@ -65,15 +65,15 @@ Although we can use a relational database to model the relationships represented
 
 ## Cypher Queries
 
-Cypher query that will find all of the roommates of the student Richard Kowalski:
+This query will find all of the roommates of the student Richard Kowalski:
 
 ```
 match (a: Student {firstName: "Richard", lastName: "Kowalski"}) - [r1:Housed] -> (b: Dormitory) <- [r2:Housed] - (c: Student) where r1.room = r2.room  return c;
 ```
 
-Cypher query that will update the graph database to reflect that fact that Richard Kowalski has completed section 12136 of Math 120: Finite Mathematics with a grade of B
+We update the graph database to reflect that fact that Richard Kowalski has completed section 12136 of Math 120: Finite Mathematics with a grade of B:
 
-First, we check before the update:
+First, we can query the information before we make the update:
 
 ```
 match (s:Student{firstName: "Richard",lastName: "Kowalski"})-[r]->(c:Course) return s.firstName,s.lastName,c.title,r
@@ -90,6 +90,7 @@ We double-check following the update:
 ```
 match (s:Student{firstName: "Richard",lastName: "Kowalski"})-[r]->(c:Course) return s.firstName,s.lastName,c.title,r
 ```
+![alt tag](https://raw.githubusercontent.com/dgn2/IS607_Assignment_13/master/after.png)
 
 We finish by clearing the database:
 
