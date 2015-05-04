@@ -60,7 +60,7 @@ load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13
 
 # Relational versus Graph Database
 
-Although we can use a relational database to model the relationships represented in the graph database above, a relational database requires JOIN statements that slow performance considerably ()as compared to a graph database) as we scale our application. Given that graph databases can be implemented in a fully ACID-compliant manner, a graph database is a better choice providing significantly improved query performance as we scale the application and a more parsimonious model that can easily be understood and discussed not only within the technology function, but also across the entire business.
+Although we can use a relational database to model the relationships represented in the graph database above, a relational database requires JOIN statements that slow performance considerably as we scale our application (as compared to a graph database). Given that graph databases can be implemented in a fully ACID-compliant manner, a graph database is a better choice than a relational database for this application, providing significantly improved query performance as we scale the application and a more parsimonious model that can easily be understood and discussed not only within the technology function, but also across the entire business.
 
 
 ## Cypher Queries
