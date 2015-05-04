@@ -1,0 +1,17 @@
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/students.csv" as students create (s:Student {firstName: students.firstName, lastName: students.lastName, id: students.id, gender: students.gender, address: students.address,city: students.city, state: students.state, zipCode: students.zipCode, phone: students.phone})
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/courses.csv" as courses create (c:Course {department: courses.department, number: courses.number, title: courses.title})
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/dormitory.csv" as dormitory create (d:Dormitory {name: dormitory.name})
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/enrolled.csv" as courses match (a: Student {id: courses.id}), (c: Course {number: courses.number}) create (a) - [r:Enrolled {section: courses.section, instructor: courses.instructor, grade: courses.grade}] -> (c)
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/completed.csv" as courses match (a: Student {id: courses.id}), (c: Course {number: courses.number}) create (a) - [r:Completed {section: courses.section, instructor: courses.instructor, grade: courses.grade}] -> (c)
+
+load csv with headers from "file:C:/Users/DerekG/Documents/R/IS607/Assignment_13/data-students-and-housing.csv" as housing match (a: Student {id: housing.id}), (b: Dormitory {name: housing.dormitory}) create (a) - [r:Housed {room: housing.room}] -> (b)
+
+match (a: Student {firstName: "Richard", lastName: "Kowalski"}) - [r1:Housed] -> (b: Dormitory) <- [r2:Housed] - (c: Student) where r1.room = r2.room  return c;
+
+match (a: Student {firstName: "Richard", lastName: "Kowalski"}) - [r:Enrolled] -> (b: Course {number : '120'} )  CREATE (a) - [r2:Completed{grade:"B"}] -> (b) DELETE r 
+

@@ -1,0 +1,13 @@
+id,firstName,lastName,department,number,title,grade,section,instructor
+10414,Franklin,Kerry,Mathematics,103,Calculus II,IP,41098,Willis
+10414,Franklin,Kerry,History,301,Modern Africa,IP,76980,Jones
+12767,Clarence,Moose,Mathematics,101,Calculus I,IP,54656,Willis
+12767,Clarence,Moose,History,301,Modern Africa,IP,76980,Jones
+15858,Nola,Jensen,Mathematics,103,Calculus II,IP,41098,Willis
+15858,Nola,Jensen,History,303,Ancient Egypt,IP,31332,Lattimer
+16852,Iris,White,Mathematics,103,Calculus II,IP,41098,Willis
+16852,Iris,White,History,303,Ancient Egypt,IP,31333,Lattimer
+18885,Eric,Davis,Mathematics,101,Calculus I,IP,54656,Willis
+18885,Eric,Davis,History,303,Ancient Egypt,IP,31333,Lattimer
+19457,Richard,Kowalski,Mathematics,120,Finite Mathematics,IP,12136,Judge
+19457,Richard,Kowalski,History,301,Modern Africa,IP,76980,Jones
